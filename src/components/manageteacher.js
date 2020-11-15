@@ -5,10 +5,8 @@ import { Link,withRouter } from 'react-router-dom';
 import Web3 from 'web3';
 import './App.css';
 
-
-window.$teachers=[{tid:1,name:"Lahari",sid:1,sub:"Math"},{tid:2,name:"Prathyusha",sid:2,sub:"Physics"}]
-
-var teacherlength=window.$teachers.length;
+const teachers=[{tid:1,name:"Lahari",sid:1,sub:"Math"},{tid:2,name:"Prathyusha",sid:2,sub:"Physics"}];
+//var teacherlength=window.$teachers.length;
 class manageteacher extends Component{
  
 
@@ -23,8 +21,8 @@ class manageteacher extends Component{
   {
   
     var d={};
-    teacherlength=teacherlength+1;
-    d['tid']=teacherlength;
+    //teacherlength=teacherlength+1;
+    //d['tid']=teacherlength;
     var elements = document.getElementById("teacherform").elements;
     for(var i = 0 ; i < elements.length-2 ; i++){
         var item = elements[i];
@@ -32,8 +30,9 @@ class manageteacher extends Component{
 
     }
     console.log(d);
-    window.$teachers.push(d);
-    console.log(window.$teachers);
+    teachers.push(d);
+    
+    //console.log(window.$teachers);
 
   }
 render() {
