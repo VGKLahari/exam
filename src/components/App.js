@@ -9,8 +9,8 @@ import home from './home';
 import teacher from './manageteacher';
 import center from './managecenter';
 import superintendent from './center';
-
-
+import paperRequests from './paperRequests';
+import preppaper from './preppaper';
 
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) // leaving out the arguments will default to these values
@@ -103,6 +103,8 @@ class App extends Component {
               <Route exact path="/manageteacher" component={teacher}/>
               <Route exact path="/managecenter" component={center}/>
               <Route exact path="/superintendent" component={superintendent}/>
+              <Route exact path="/teacher" component={paperRequests}/>
+              <Route exact path="/preppaper" component={preppaper}/>
             </Switch>
            
           </Router>

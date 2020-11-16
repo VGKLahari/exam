@@ -41,6 +41,22 @@ render() {
 
    
 <div>
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg ">
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav w-100">
+            <li class="nav-item active">
+              <Link class="nav-link" to="/">Home <span class="sr-only">(current)</span></Link>
+            </li>
+            </ul>
+          
+        
+        </div>
+      </nav>
       <div class="container">          
       <center><h1 class="mt-4 pt-4" style={{position:"relative",top:-50}}>Exam Centers</h1></center>
       <div classname="centers">
@@ -59,12 +75,22 @@ render() {
     </div>
      </div>
    ))}
-   
+   <div class="card bg-light">
+      <div class="card-body">
+      <button class="btn btn-danger float-right" style={{borderRadius: 20, height: 40,width: 185, marginTop: 6}} >Delete centre</button>
+     
+       
+   <div class="h5 d-inline"><b>Centre Name:</b>&nbsp;&nbsp;Loyola</div>
+        <div class="h5"><b>Centre code:</b>&nbsp;&nbsp;733003</div>
+        <div class="h5"><b>Centre address:</b>&nbsp;&nbsp;Begumpet,Hyd</div>
+      
+      </div>
+    </div>
     </div>
   </div>
-  <div class="buttonRight">
+  <div >
   
-      <button type="button" id="atb" class="btn btn-success  " onClick={this.addcenter} >
+      <button type="button" id="atb" class="btn btn-success float-right " onClick={this.addcenter} >
         <b>Add centre</b>&nbsp;
       <i class="fa fa-plus" aria-hidden="true" ></i>
     

@@ -20,19 +20,25 @@ render()
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav w-100">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <Link class="nav-link" to="/">Home <span class="sr-only">(current)</span></Link>
             </li>
-            </ul><ul class = "nav justify-content-end">
+            <li class="nav-item active">
+              <Link class="nav-link" to="/manageteacher">Teachers <span class="sr-only">(current)</span></Link>
+            </li>
+            <li class="nav-item active">
+              <Link class="nav-link" to="/managecenter">Centers <span class="sr-only">(current)</span></Link>
+            </li>
+            </ul>
           
-        </ul>
+        
         </div>
       </nav>
   <div class="jumbotron"> 
         <div id="a" class="container text-center" >
       <Link class="btn btn-primary w-50 text-left" to="/manageteacher" role="button" >&emsp;&emsp;&emsp;<i class="fas fa-users"></i>&emsp;&emsp;&emsp;&emsp;&emsp;<b>Add a teacher</b></Link><br></br><br></br>
-      <Link class="btn btn-primary w-50 text-left" to="#" role="button" >&emsp;&emsp;&emsp;<i class="fas fa-school"></i>&emsp;&emsp;&emsp;&emsp;&emsp;<b>Add a center</b></Link><br></br><br></br>
+      <Link class="btn btn-primary w-50 text-left" to="managecenter" role="button" >&emsp;&emsp;&emsp;<i class="fas fa-school"></i>&emsp;&emsp;&emsp;&emsp;&emsp;<b>Add a center</b></Link><br></br><br></br>
       <Link class="btn btn-primary w-50 text-left" to="/manageteacher" role="button" >&emsp;&emsp;&emsp;<i class="fas fa-users-slash">&emsp;</i>&emsp;&emsp;&emsp;&emsp;<b>Delete a teacher</b></Link><br></br><br></br>
-      <Link class="btn btn-primary w-50 text-left" to="#" role="button" >&emsp;&emsp;&emsp;<i class="fas fa-store-slash"></i>&emsp;&emsp;&emsp;&emsp;&emsp;<b>Delete a center</b></Link><br></br><br></br>
+      <Link class="btn btn-primary w-50 text-left" to="managecenter" role="button" >&emsp;&emsp;&emsp;<i class="fas fa-store-slash"></i>&emsp;&emsp;&emsp;&emsp;&emsp;<b>Delete a center</b></Link><br></br><br></br>
       <Link class="btn btn-primary w-50 text-left" to="/manageteacher" role="button" >&emsp;&emsp;&emsp;<i class="fas fa-users"></i>&emsp;&emsp;&emsp;&emsp;&emsp;<b>Request a teacher</b></Link><br></br><br></br>
       </div>
      

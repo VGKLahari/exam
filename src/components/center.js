@@ -3,16 +3,25 @@ import { render } from 'react-dom';
 import { Link,withRouter } from 'react-router-dom';
 import Web3 from 'web3';
 import './App.css';
-import EthCrypto from 'eth-crypto';
 
 
 const exams=[{papercode:'eng_9_2020',class:9,duration:'9am to 12pm',start:new Date(2020,12,5,9,0,0),end:new Date(2020,12,5,12,0,0),subject:"English"},
 {papercode:'math_9_2020',class:9,duration:'1pm to 4pm',start:new Date(2020,12,5,1,0,0),end:new Date(2020,12,5,4,0,0),subject:"Math"}]
 
+
 class superintendent extends Component{
  
+  async decrypt()
+{
+  const p = document.getElementById("prikey").value;
+  this.setState({hash:" QmYac53eA78Rwn1tz113VGBBgyDC6WobgUTGDLFwryzXVE"});
+    /*const encrypted_obj = EthCrypto.cipher.parse(this.state.hash);
+    const decrypted_string = await EthCrypto.decryptWithPrivateKey(p, encrypted_obj);*/
+
+}
 constructor(props)
 {
+  super(props);
   this.state={hash:''}
 }
 getpaper(id,start)
@@ -24,24 +33,32 @@ getpaper(id,start)
     
 
 }
-async decrypt()
-{
-  const p = document.getElementById("prikey").value;
-  this.state.hash =" QmYac53eA78Rwn1tz113VGBBgyDC6WobgUTGDLFwryzXVE";
-    const encrypted_obj = EthCrypto.cipher.parse(this.state.hash);
-    const decrypted_string = await EthCrypto.decryptWithPrivateKey(p, encrypted_obj);
 
-}
 
 
 render() {
 
  
     return (
-
-   
 <div>
-      <div class="container">          
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg ">
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav w-100">
+            <li class="nav-item active">
+              <Link class="nav-link" to="/">Home <span class="sr-only">(current)</span></Link>
+            </li>
+            </ul>
+          
+        
+        </div>
+      </nav>  
+      <div class="container">    
+       
       <center><h1 class="mt-4 pt-4" style={{position:"relative",top:-50}}>Today's Exams</h1></center>
  <div className="exams">
    {exams.map((exam,index)=>(
@@ -71,7 +88,7 @@ render() {
           <input id="prikey "type="password" placeholder="Enter private key" name="pkey" required />
           <button type="submit" class="btn-success btn-sm">Submit</button>
         </form></div><br></br>
-        <a class="btn-success btn-sm" href="http://ipfs.infura.io/ipfs/QmYac53eA78Rwn1tz113VGBBgyDC6WobgUTGDLFwryzXVE" download="w3logo">Download paper</a>
+        <a class="btn-success btn-sm" href="http://ipfs.infura.io/ipfs/QmYac53eA78Rwn1tz113VGBBgyDC6WobgUTGDLFwryzXVE" download="paper">Download paper</a>
               </div>);
           }
           else
